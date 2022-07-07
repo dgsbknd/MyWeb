@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>块级、内联元素</h3>
+  <div>
+    内联:
+    <span>span</span>
+    <strong>strong</strong>
+    <em>em</em>
+    <del>del</del>
+    <ins>ins</ins>
+    <label for="">label</label>
+    <a href="">a</a>
+    <sub>sub</sub>
+    <sup>sup</sup>
+  </div>
+  <div>
+    块级
+    <div>div</div>
+    <p>p</p>
+    <address>address</address>
+    <ul>ul<li>li</li></ul>
+    <ol>ol<li>li</li></ol>
+    <dl>dl<dt>dt<dd>dd</dd></dt></dl>
+    <table>table</table>
+    <form action="">form</form>
+    <fieldset>fieldset</fieldset>
+    <legend>legend</legend>
+  </div>
+  <div>
+    内联块
+    <input type="text" value="input">
+    <img src="" alt="img">
+    <select name="" id="">select<option value="optio">1234</option></select>
+    <textarea name="" id="" cols="30" rows="10">textarea</textarea>
+    <iframe src="" frameborder="0">iframe</iframe>
+  </div>
+  <hr>
+  <h3>a标签</h3>
+  <div>
+    <a href="https://www.baidu.com" target="_self">当前窗口打开页面</a>
+    <a href="https://www.baidu.com" target="_blank">新窗口打开页面</a>
+  </div>
+  <hr>
+  <h3>表格</h3>
+  <div>
+    <!-- 
+      cellpadding:单元边沿与其内容之间的空白 
+      cellspacing:单元格之间空白 
+    -->
+    <table width= '200px' border="10" cellspacing="2" cellpadding = '4'>
+      <caption>表格标题</caption>
+      <thead align="center">
+        <tr><td colspan="3">1234</td></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" align="right">页眉</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	 
+	<!-- <input> autofocus 属性 :自动获取焦点  -->
+	<!-- <input> required 属性 :不为空 -->
+	<form action="5、input类型.html" method="get" id="form1">
+		<label>选取颜色:</label>
+		<input type="color" name="favcolor" required>
+		<label>日期:</label>
+		<input type="datetime-local" name="bdaytime">
+		<label>Email:</label>
+		<input type="email" name="email" autofocus >
+		<label>month</label>
+		<input type="month" name="bdaymonth">
+		<label>number</label>
+		<input type="number" name="quantity" min="1" max='100'>
+		<label>包含一定范围内数字值的输入域</label>
+		<input type="range" name="points">
+		<label>选项列表：</label>
+		<input list="browsers">
+		<datalist id="browsers">
+			<option value="Internet Explorer">
+			<option value="Firefox">
+			<option value="Chrome">
+			<option value="Opera">
+			<option value="Safari">
+		</datalist>
+		<button>提交</button>
+	</form>
+	Last name: <input type="text" name="lname" form="form1">
+</body>
+</html>

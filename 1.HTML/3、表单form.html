@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>表单 form</h3>
+    <div>
+      <form action="5、form.html" method="get" name="form1">
+        <label for="email">E-mail: </label>
+        <input type="email" name="email" /><br />
+        <label for="firstname">firstname: </label>
+        <input
+          type="text"
+          name="firstname"
+          placeholder="请输入你的账号"
+          required
+        /><br />
+        <label for="password">password: </label>
+        <input type="password" name="password" /><br />
+        <input type="hidden" />
+        <input type="radio" name="sex" value="male" />Male<br />
+        <input type="radio" name="sex" value="female" />Female<br />
+        <input type="checkbox" name="vehicle" value="Bike" />I have a bike<br />
+        <input type="checkbox" name="vehicle" value="Car" />I have a car<br />
+        <input type="checkbox" name="vehicle" value="Dog" />I have a dog<br />
+        <select name="cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="fiat" selected>Fiat</option>
+          <option value="audi">Audi</option></select
+        ><br />
+        <input type="file" /><br />
+        <input type="color" name="favcolor" /><br />
+        生日: <input type="date" name="bday" /><br />
+        生日 (月和年): <input type="month" name="bdaymonth" /><br />
+        数量 ( 1 到 5 之间 ):
+        <input type="number" name="quantity" min="1" max="5" /><br />
+        <input type="range" name="points" min="1" max="10" /><br />
+        <textarea rows="10" cols="30">我是一个文本框。</textarea><br />
+        <input type="submit" />
+        <button>点击</button>
+        <input type="reset" value="重置" />
+        <fieldset>
+          <legend>带边框的表单</legend>
+          Name: <input type="text" size="30" /><br />
+          E-mail: <input type="text" size="30" /><br />
+          Date of birth: <input type="text" size="10" />
+        </fieldset>
+      </form>
+    </div>
+    <hr />
+  </body>
+</html>

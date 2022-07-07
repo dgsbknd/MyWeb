@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<img id="scream" src="./img/pineapple.jpg" width="10%">
+
+	<canvas id="myCanvas" width="200" height="100" style="border: 1px solid #000"></canvas>
+
+	<script type="text/javascript">
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");//创建 context 对象：
+		ctx.fillStyle="#FF0000";//红色
+		ctx.fillRect(5,5,50,55);//绘制矩形fillRect(x,y,width,height)
+		// 线段
+		ctx.moveTo(10,0);
+		ctx.lineTo(200,100);
+		ctx.moveTo(-20,0);
+		ctx.lineTo(200,100);
+		ctx.stroke();
+		ctx.beginPath();//重置当前的路径
+		// 圆
+		ctx.arc(95,50,40,0,2*Math.PI);	
+		ctx.stroke();
+		// 文字
+		// ctx.font="30px Arial";
+		// ctx.fillText("123",100,40);
+		// ctx.strokeText("456",100,60)//空心文字
+		// 创建渐变
+		// var grd = ctx.createRadialGradientnearGradient(0,0,200,0);//线性渐变
+		// var grd = ctx.createRadialGradient(100,50,1,100,50,25);//径向/圆渐变
+		// grd.addColorStop(0,'red')
+		// grd.addColorStop(1,'white')
+		// 填充渐变
+		// ctx.fillStyle = grd
+		// ctx.fillRect(80,5,40,40)
+		// ctx.fillRect(75,25,50,50)
+
+		// var img = document.getElementById("scream")
+		// img.onload = function(){
+			// ctx.drawImage(img,10,10)
+		// }
+
+
+	</script>
+</body>
+</html>

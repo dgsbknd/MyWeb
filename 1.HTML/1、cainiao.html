@@ -8,20 +8,21 @@
 </head>
 <body>
   <h3>块级、内联元素</h3>
-  <div>
-    内联:
+  <div>内联:
     <span>span</span>
-    <strong>strong</strong>
-    <em>em</em>
-    <del>del</del>
-    <ins>ins</ins>
+    <strong>这个文本是加粗的</strong>
+    <b>这个文本是加粗的</b>
+    <em>这个文本是斜体的</em>
+    <del>删除的文本</del>
+    <ins>插入的文本</ins>
     <label for="">label</label>
     <a href="">a</a>
-    <sub>sub</sub>
-    <sup>sup</sup>
+    <sub>下标</sub>
+    <sup>上标</sup>
+    <code>计算机代码</code>
+    <bdo dir="rtl">该段落文字从右到左显示。</bdo>
   </div>
-  <div>
-    块级
+  <div>块级:
     <div>div</div>
     <p>p</p>
     <address>address</address>
@@ -32,9 +33,13 @@
     <form action="">form</form>
     <fieldset>fieldset</fieldset>
     <legend>legend</legend>
+    <pre>
+      此例演示如何使用 pre 标签
+      对空行和    空格
+      进行控制
+    </pre>
   </div>
-  <div>
-    内联块
+  <div>内联块:
     <input type="text" value="input">
     <img src="" alt="img">
     <select name="" id="">select<option value="optio">1234</option></select>
@@ -46,13 +51,31 @@
   <div>
     <a href="https://www.baidu.com" target="_self">当前窗口打开页面</a>
     <a href="https://www.baidu.com" target="_blank">新窗口打开页面</a>
+    <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">发生邮件</a>
+    <a href="http://www.example.com/"><img src="URL" alt="替换文本"></a>
   </div>
   <hr>
-  <h3>表格</h3>
+  <h3>图片</h3>
+  <div>
+    <p>
+      <img src="logo.png">
+      <!-- 创建图像映射 -->
+      <img src="https://www.runoob.com/try/demo_source/planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+      <!-- 定义图像地图 -->
+      <map name="planetmap">
+        <!-- 定义图像地图中的可点击区域 -->
+        <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+        <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+        <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+      </map>
+    </p>
+  </div>
+  <hr>
+  <h3>table 表格</h3>
   <div>
     <!-- 
-      cellpadding:单元边沿与其内容之间的空白 
-      cellspacing:单元格之间空白 
+        单元格边距：cellpadding
+        单元格间距：cellspacing
     -->
     <table width= '200px' border="10" cellspacing="2" cellpadding = '4'>
       <caption>表格标题</caption>
@@ -77,5 +100,44 @@
       </tfoot>
     </table>
   </div>
+  <hr>
+  <h3>框架</h3>
+  <div>
+    <!-- frameborder：移除iframe的边框 -->
+    <!-- <iframe loading="lazy" src="https://www.runoob.com/html/html-entities.html" width="800" height="400"  frameborder="0" name="iframe_a"></iframe> -->
+    <!-- iframe 显示 href 链接 -->
+    <!-- <p><a href="https://www.runoob.com" target="iframe_a" rel="noopener">RUNOOB.COM</a></p> -->
+  </div>
+  <hr>
+  <h3>脚本</h3>
+  <div id="appScript">
+    <script>
+      document.write("<p>这是一个段落。</p>");
+    </script>
+    <!-- 应对不支持脚本或禁用脚本的浏览器 -->
+    <noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
+    <script type="text/template" id="showDialog">
+      <p>对话框里内容</p>
+    </script>
+    <button type="button" onclick="myFunction()">点我！</button>
+  </div>
+  <script>
+    var showNum = 1;
+    function myFunction() {
+      let showDialog = document.getElementById('showDialog')
+      let appScript = document.getElementById('appScript')
+      appScript.innerHTML += showDialog.innerHTML
+    }
+  </script>
+  <hr>
+  <h3>字符实体</h3>
+  <div>
+    <p>&lt; 或 &#60; 或 &#060;</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;123</p>
+    <p>
+      &lt; / &gt; /	&amp; / &yen; /
+    </p>
+  </div>
+  <hr>
 </body>
 </html>

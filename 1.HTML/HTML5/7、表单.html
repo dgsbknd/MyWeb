@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	 
+	<!-- <input> autofocus 属性 :自动获取焦点  -->
+	<!-- <input> required 属性 :不为空 -->
+	<form action="5、input类型.html" method="get" id="form1" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+    <p>
+      <label>选取颜色:</label>
+      <input type="color" name="favcolor" required>
+    </p>
+    <p>
+      <label>生日:</label>
+      <input type="date" name="bday">
+    </p>
+    <p>
+      <label>日期:</label>
+      <input type="datetime-local" name="bdaytime">
+    </p>
+    <p>
+      <label>Email:</label>
+      <input type="email" name="email" autofocus >
+    </p>
+    <p>
+      <label>month</label>
+      <input type="month" name="bdaymonth">
+    </p>
+    <p>
+      <label>number</label>
+      <input type="number" name="quantity" min="1" max='100'>
+    </p>
+    <p>
+      <label>包含一定范围内数字值的输入域</label>
+      <input type="range" name="points">
+    </p>
+    <p>
+      <label>选项列表：</label>
+      <input list="browsers">
+    </p>
+    <p>
+      <label>Search Google: </label>
+      <input type="search" name="googlesearch">
+    </p>
+    <p>
+      <label>电话号码:</label>
+      <input type="tel" name="usrtel">
+    </p>
+    <p>
+      <label>添加您的主页: </label>
+      <input type="url" name="homepage">
+    </p>
+    <p>
+      <label>添加您的主页: </label>
+      <input list="browsers" name="browser">
+      <datalist id="browsers">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist>
+    </p>
+    <p>
+      <input type="range" id="a" value="50">100 +
+      <input type="number" id="b" value="50">=
+      <output name="x" for="a b"></output>
+    </p>
+    <p>
+      <button>提交</button>
+    </p>
+	</form>
+
+</body>
+</html>

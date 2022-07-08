@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+  <!-- http://www.w3.org/2000/svg -->
+
+  <!-- 矩形 -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <rect width="100%" height="100%" stroke="red" stroke-width="4" fill="yellow" />
+    <rect x="20" y="10" rx="20" ry="10" width="200" height="100" style="fill:blue; stroke:pink; stroke-width:4; fill-opacity:0.5" />
+  </svg>
+
+  <!-- 圆 -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
+  </svg>
+
+  <!-- 椭圆 -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <!-- <ellipse  cx="120" cy="80" rx="100" ry="50" style="fill:yellow; stroke:purple; stroke-width:2"></ellipse> -->
+    <ellipse cx="130" cy="100" rx="80" ry="25" style="fill:purple"/>
+    <ellipse cx="130" cy="70" rx="100" ry="20" style="fill:lime"/>
+    <ellipse cx="130" cy="40" rx="120" ry="15" style="fill:yellow"/>
+  </svg>
+
+  <!-- 直线 -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2"/>
+  </svg>
+
+  <!-- 多边形 / 五角星 -->
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="border:1px solid #ccc">
+		<!-- fill-rule 属性提供两种选项用于指定如何判断图形的“内部:nonzero/evenodd -->
+    <polygon points="0,0 10,140 110,75"></polygon>
+    <polygon points='100,10 60,120 175,45 30,45 160,120' style='fill:lime;stroke: purple;stroke-width: 5;fill-rule: evenodd;'>
+	</svg>
+
+  <!-- 多段线 -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <polyline points="20,20 40,25 60,40 80,120 120,140 200,180" style="fill:none; stroke:black; stroke-width:3" />
+    <polyline points="30,100 80,140 180,20 " style="fill:none; stroke:red; stroke-width:3" />
+  </svg>
+
+  <!-- 路径 -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="border:1px solid #ccc" >
+    <!-- <path d="M150 0 L75 200 L225 200 Z" /> -->
+    <path d="M 100 140 l 60 -130" stroke="red" stroke-width="3" fill="none" />
+    <path d="M 160 10 l 60 130" stroke="red" stroke-width="3" fill="none" />
+    <path d="M 130 75 l 60 0" stroke="green" stroke-width="3" fill="none" />
+    <path d="M 100 140 q 60 -124 120 0" stroke="blue" stroke-width="3" fill="none" />
+    <g stroke="black" stroke-width="3" fill="black">
+      <circle id="pointA" cx="100" cy="140" r="3" />
+      <circle id="pointB" cx="160" cy="10" r="3" />
+      <circle id="pointC" cx="220" cy="140" r="3" />
+    </g>
+    <g font-size="30" font="sans-serif" fill="black" stroke="none"
+    text-anchor="middle">
+      <text x="100" y="140" dx="-20">A</text>
+      <text x="160" y="10" dx="-20" dy="10">B</text>
+      <text x="220" y="140" dx="20">C</text>
+    </g>
+  </svg>
+
+  <!-- 文本 -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <text x="0" y="15" fill="red">I love SVG</text>
+    <text x="20" y="35" fill="red" transform="rotate(30 20,40)">I love SVG</text>
+    <defs>
+      <!-- 路径 -->
+      <path id="path1" d="M75,20 a1,1 0 0,0 100,0" />
+    </defs>
+    <text x="10" y="100" style="fill:red" >
+      <textPath xlink:href="#path1">I love SVG I love SVG</textPath>  
+    </text>
+    <text x="10" y="100" style="fill:red;">Several lines:
+      <tspan x="10" y="120">First line</tspan>
+      <a xlink:href="http://www.w3schools.com/svg/" target="_blank">
+        <tspan x="10" y="140">Second line</tspan>
+      </a>
+    </text>
+  </svg>
+
+  <!-- Stroke -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <g fill="none">
+      <path stroke="red" stroke-width="2" stroke-linecap="butt" stroke-dasharray="5,5" d="M5 20 l215 0" />
+      <path stroke="blue" stroke-width="4" stroke-linecap="round" stroke-dasharray="10,10" d="M5 40 l215 0" />
+      <path stroke="black" stroke-width="6" stroke-linecap="square" stroke-dasharray="20,10,0,10,0,10" d="M5 60 l215 0" />
+    </g>
+  </svg>
+
+  <!-- 模糊效果 -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="f1" x="0" y="0">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+      </filter>
+    </defs>
+    <rect width="90" height="90" stroke="green" stroke-width="3" fill="yellow" filter="url(#f1)" />
+  </svg>
+
+  <!-- 阴影 -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="f2" x="0" y="0" width="200%" height="200%">
+        <feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
+        <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+        <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+      </filter>
+    </defs>
+    <rect width="90" height="90" stroke="green" stroke-width="3"fill="yellow" filter="url(#f2)" />
+  </svg>
+
+
+  <!-- 嵌入 HTML  -->
+  <!-- <embed src="./img/circle1.svg" type="image/svg+xml" /> -->
+  <!-- <iframe src="./img/circle1.svg"></iframe> -->
+
+<!--   
+  Canvas：
+    依赖分辨率
+    不支持事件处理器
+    弱的文本渲染能力
+    能够以 .png 或 .jpg 格式保存结果图像
+    最适合图像密集型的游戏，其中的许多对象会被频繁重绘
+  SVG：
+    不依赖分辨率
+    支持事件处理器
+    最适合带有大型渲染区域的应用程序（比如谷歌地图）
+    复杂度高会减慢渲染速度（任何过度使用 DOM 的应用都不快）
+    不适合游戏应用 
+-->
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #div1{
+      width:350px;
+      height:470px;
+      padding:10px;
+      border:1px solid #aaaaaa;
+    }
+  </style>
+  <script>
+    function allowDrop(ev){
+      console.log('拖动中'+ev)
+      ev.preventDefault();
+    }
+    // 
+    
+    function drag(ev){
+      console.log('被拖'+ev)
+      // setData：设置被拖数据的数据类型和值
+      ev.dataTransfer.setData("Text",ev.target.id);
+    }
+    function drop(ev){
+      console.log('放置'+ev)
+      ev.preventDefault();
+      var data=ev.dataTransfer.getData("Text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+  </script>
+</head>
+<body>
+  <!-- 
+    可拖放：draggable
+    被拖动的数据：ondragstart
+    何处放置被拖动的数据：ondragover
+    进行放置：ondrop
+  -->
+  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <br>
+  <img src="./img/pineapple.jpg" 
+    loading="lazy" id="drag1"  
+    draggable="true" ondragstart="drag(event)">
+</body>
+</html>

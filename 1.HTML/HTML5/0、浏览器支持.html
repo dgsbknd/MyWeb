@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>渲染 HTML5</title>
+  <!-- 在 IE 浏览器的版本小于 IE9 时将读取 html5.js 文件，并解析它。 -->
+  <!--[if lt IE 9]>
+    <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+  <![endif]-->
+  <style>
+    header, section, footer, aside, nav, main, article, figure {
+      display: block; 
+    }
+    myHero {
+      display: block;
+      background-color: #ddd;
+      padding: 20px;
+      font-size: 30px;
+    }
+  </style>
+  <script>
+    document.createElement('myHero')
+  </script>
+</head>
+<body>
+  <myHero>123</myHero>
+</body>
+</html>

@@ -6,6 +6,7 @@
 	<title>Document</title>
 </head>
 <body>
+  <!-- 视频 -->
 	<div style="text-align: center;">
 		<button onclick="playPause()">播放/暂停</button>
 		<button onclick="makeBig()">放大</button>
@@ -18,6 +19,13 @@
 			您的浏览器不支持 HTML5 video 标签。
 		</video>
 	</div>
+
+  <!-- 音频 -->
+  <audio controls>
+    <source src="./video/movie.mp4" type="audio/mp4">
+    <source src="horse.mp3" type="audio/mpeg">
+    您的浏览器不支持 audio 元素。
+  </audio>
 <script type="text/javascript">
 var myVideo=document.getElementById("video1"); 
 

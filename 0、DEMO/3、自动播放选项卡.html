@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #menus {
+      width: 90%;
+      height: 200px;
+      padding: 10px;
+      border: 1px solid #333;
+      overflow: hidden;
+    }
+    #menus_tab .menu_item {
+      margin: 0 12px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #fff;
+      color: #9195a3;
+    }
+    #menus_tab .menu_item:hover {
+      color: #000;
+    }
+    #menus_tab .active {
+      color: #000;
+      border-bottom: 2px solid #4e71f2;
+    }
+    #menus #menus_text div{
+      margin-top: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="menus">
+    <div id="menus_tab"></div>
+    <div id="menus_text"></div>
+  </div>
+  <script>
+    window.onload = function(){
+      var oTab = document.getElementById('menus_tab');
+      var omText = document.getElementById('menus_text');
+      var ObjMenus = [
+        {index:0, item:'选项一', text:'内容一'},
+        {index:1, item:'选项二', text:'内容二'},
+        {index:2, item:'选项三', text:'内容三'},
+        {index:3, item:'选项四', text:'内容四'},
+        {index:4, item:'选项五', text:'内容五'},
+        {index:5, item:'选项六', text:'内容六'},
+        {index:6, item:'选项七', text:'内容七'},
+        {index:7, item:'选项八', text:'内容八'},
+        {index:8, item:'选项九', text:'内容九'},
+      ]
+      var iNum = 0;
+      var timer = null;
+      var oTabList = [] , omTextList = [];
+
+      for(let i = 0; i <  ObjMenus.length; i++){
+        // 添加span
+        var oSpan = document.createElement("span");
+        var oItem = document.createTextNode(ObjMenus[i].item);
+        oSpan.appendChild(oItem);
+        oTab.appendChild(oSpan);
+        // 添加div
+        var oDiv = document.createElement("div");
+        var oText = document.createTextNode(ObjMenus[i].text);
+        oDiv.appendChild(oText);
+        omText.appendChild(oDiv);
+        // 将生成出的div、span保存在数组中
+        oTabList.push(oSpan)
+        omTextList.push(oDiv)
+        // 为所有生成的span添加class
+        oSpan.className = "menu_item";
+        // 点击事件
+        oSpan.onclick = function(){
+          // 所有默认样式
+          for(let i = 0; i< oTabList.length; i++){
+            oTabList[i].className = "menu_item";
+            omTextList[i].style.display = 'none'
+          }
+          iNum = ObjMenus[i].index
+          // 点击时样式改变
+          this.className += " active";
+          omTextList[iNum].style.display="block"
+          
+        }
+        
+      }
+
+      // 初始状态
+      omTextList[iNum].style.display = 'block'
+      oTabList[iNum].className = "menu_item active";
+
+      // 定时
+      timer = setInterval(zdbf,1500)
+
+      // 移入时暂停
+      oTab.onmouseover = function(){
+        clearTimeout(timer)
+      }
+      // 移出时开始
+      oTab.onmouseout = function(){
+        timer = setInterval(zdbf, 1500)
+      }
+      
+      function zdbf(){
+        for(var i=0; i < oTabList.length; i++){
+          oTabList[i].className = "menu_item";
+          omTextList[i].style.display = "none";
+        }
+        iNum++;
+        if(iNum>=oTabList.length){
+          iNum=0;	
+        }
+        oTabList[iNum].className+=" active";
+        omTextList[iNum].style.display=" block"
+      }
+    }
+  </script>
+</body>
+</html>

@@ -160,5 +160,68 @@
       外凸轮廓
     </p>
   </div>
+  <hr>
+  <h3>显示/隐藏/可见</h3>
+  <div>
+    <p style="display: block;">显示元素</p>
+    <p style="display: none;">隐藏元素</p>
+    <p style="visibility:hidden;">隐藏元素</p>
+    <p>123</p>
+  </div>
+  <hr>
+  <h3>Position(定位)</h3>
+  <div>
+    <div style="position: sticky; top: 0;">
+      sticky :粘性定位
+    </div>
+    <p style="position: static;">HTML 元素的默认值</p>
+    <p style="position:fixed; top:30px; right:5px">fixed 定位：固定位置</p>
+    <div style="position:relative; left:20px; ">relative:
+      <p style="position:absolute; left:20px; top: 0;">absolute 定位</p>
+    </div>
+  </div>
+  <hr>
+  <h3>滚动条Overflow</h3>
+  <div>
+    <div style="width: 210px; height: 110px; 
+      overflow: scroll;">
+      overflow: scroll 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。
+      overflow: hidden 内容会被修剪，并且其余内容是不可见的
+      overflow: auto 如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。
+      overflow: visible(默认) 默认值。内容不会被修剪，会呈现在元素框之外。
+    </div>
+  </div>
+  <hr>
+  <h3>浮动 Float</h3>
+  <div>
+  </div>
+  <hr>
+  <h3>垂直居中</h3>
+  <div style="height: 200px; position: relative; border: 3px solid green; ">
+    <p style="margin: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">我是水平和垂直居中的。</p>
+  </div>
+  <hr>
+  <h3>伪类</h3>
+  <div>
+    :first-child  第一个子元素
+    :last-child  最后一个子元素
+    :nth-child(n) 父元素的第n个子元素
+    :nth-last-child(n) 倒数的第n个子元素
+    :checked  选择所有选中的表单元素
+    :in-range 选择元素指定范围内的值
+    :focus  选择元素输入后具有焦点
+    :before  元素之前插入内容
+    :after  元素之后插入内容
+  </div>
+  <h3>伪元素</h3>
+  <div>
+    :first-line 向文本的首行设置特殊样式
+    :first-letter 文本的首字母设置特殊样式
+  </div>
+  <p>
+    伪类选择元素基于的是当前元素处于的状态
+    伪元素是对元素中的特定内容进行操作，
+  </p>
+  <hr>
 </body>
 </html>

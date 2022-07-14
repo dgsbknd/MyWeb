@@ -33,6 +33,18 @@
       height: 2000px;
       margin-left: 20%;
     }
+    /* 下拉菜单 */
+    .dropdown {
+      position: relative;
+      display: inline;
+    }
+    .dropdown-content {
+      display: block;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-sizing: 0px;
+    }
     @media screen and (max-width: 900px) {
       ul.sidenav {
         width: 100%;
@@ -62,6 +74,13 @@
         <li><a href="#home" class="active">主页</a></li>
         <li><a href="#news">新闻</a></li>
         <li><a href="#contact">联系</a></li>
+        <li class="dropdown">
+          <a href="#contact">下拉菜单</a>
+          <div class="dropdown-content">
+            <p>菜鸟教程</p>
+            <p>www.runoob.com</p>
+          </div>
+        </li>
         <li><a href="#about">关于</a></li>
       </ul>
     </nav>

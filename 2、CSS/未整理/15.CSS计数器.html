@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			counter-reset: section;
+		}
+		h1{
+			counter-reset: subsection;
+		}
+		h1::before{
+			counter-increment: section;
+			content: "Section " counter(section) ": ";
+		}
+		h2::before{
+			counter-increment: subsection;
+			content: counter(section) '.' counter(subsection) ": ";
+		}
+		ol {
+			counter-reset: section;
+			list-style-type: none;
+		}
+		li::before {
+			counter-increment: section;
+			content: counters(section,".") " ";
+		}
+	</style>
+</head>
+<body>
+	<h1>使用 CSS 计数器:</h1>
+	<h2>HTML 教程</h2>
+	<h2>CSS 教程</h2>
+	<h2>JavaScript 教程</h2>
+	<h1>使用 CSS 计数器:</h1>
+	<h2>HTML 教程</h2>
+	<h2>CSS 教程</h2>
+	<h2>JavaScript 教程</h2>
+	<br/>
+	<ol>
+		<li>item</li>
+		<li>item 
+			<ol>
+				<li>item</li>
+				<li>item</li>
+				<li>item
+					<ol>
+						<li>item</li>
+						<li>item</li>
+						<li>item</li>
+					</ol>
+				</li>
+				<li>item</li>
+			</ol>
+		</li>
+		<li>item</li>
+		<li>item</li>
+	</ol>
+</body>
+</html>

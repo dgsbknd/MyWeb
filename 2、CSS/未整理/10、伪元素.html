@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		/*文本的首行设置特殊样式。*/
+		p:first-line {
+			color:#ff0000;
+			font-variant:small-caps;
+		}
+		/*文本的首字母设置特殊样式*/
+		p:first-letter {
+			color:#000;
+			font-size:xx-large;
+		}
+		/*在元素的内容前面插入新内容*/
+		div:before {
+			content:url(img/border.png);
+		}
+		/*元素的内容之后插入新内容*/
+		div:after{
+			content:url(img/border.png);
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p>
+			This text is styled with some of the text formatting properties. The heading uses the text-align, text-transform, and color properties. The paragraph is indented, aligned, and the space between characters is specified. The underline is removed from the link.
+		</p>
+	</div>
+</body>
+</html>

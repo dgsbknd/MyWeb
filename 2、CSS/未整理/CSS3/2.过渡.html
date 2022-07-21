@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		#div2{
+			margin: 20% auto;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			transition: width 2s, height 2s,transform 2s;
+		}
+		#div1{
+			position: relative;
+			height: 200px;
+			width: 200px;
+			margin: 100px;
+			padding:10px;
+			border: 1px solid black;
+		}
+		#div2:hover{
+			/*width: 300px;*/
+			/*height: 300px;*/
+			transform:rotateX(0deg);
+			transform:rotateY(180deg);
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<div id="div2"></div>
+	</div>
+</body>
+</html>

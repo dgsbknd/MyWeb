@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .box {
+      width: 100px;
+      height: 75px;
+      background-color: red;
+      border: 1px solid black;
+    }
+    .textshadow{
+      position: relative;
+      width:4em;
+      white-space:nowrap; 
+      word-wrap:break-word;
+    }
+    .textshadow::after {
+      content: '';
+      position: absolute;
+      z-index: -1; /* hide shadow behind image */
+      box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3); 
+      width:100%; 
+      left: 0%; 
+      height: 100%;
+      bottom: 0;
+    }
+    .changeBox {
+      /* transition-property: width; */
+      /* transition-duration: 1s; */
+      /* 过渡效果的时间曲线 */
+      /* transition-timing-function: linear; */
+      /* 过渡效果何时开始 */
+      /* transition-delay: 2s; */
+      transition: width 2s, height 2s, transform 2s;
+      /* Safari */
+      -webkit-transition: width 2s, height 2s, transform 2s;
+    } 
+    .changeBox:hover {
+      width: 300px;
+      /* height: 40px; */
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <h3>选择器</h3>
+  <div></div>
+  <hr>
+  <h3>盒模型</h3>
+  <div></div>
+  <hr>
+  <h3>圆角边框/阴影</h3>
+  <div>
+    <p class="box" style="
+      border:4px solid;
+      /* 边界图片 */
+      border-image:url(../../img/border.png) 30 30 round;
+      /* 圆角 */
+      border-radius:15px 20px 30px 15px;
+      /* 盒阴影 */
+      box-shadow: 10px 10px 5px #888888;
+    ">
+    </p>
+  </div>
+  <hr>
+  <h3>背景</h3>
+  <div>
+    <p class="box" style="
+      height: 200px;
+      width: 400px;
+      border: 20px solid #ccc;
+      padding: 20px;
+      background-image: url(../../img/circle1.svg),  url(../../img/border.png);
+      background-position: right bottom, left top;
+      background-repeat: no-repeat, no-repeat;
+      background-size:60%,20%;
+      /* 指定了背景图像的位置区域 */
+      /* background-origin:content-box; */
+      /* 规定背景的绘制区域 */
+      /* background-clip: content-box;  */
+    "></p>
+  </div>
+  <hr>
+  <h3>渐变</h3>
+  <div>
+    <p class="box" style="
+      background-color:#fff;
+      /* 默认从上到下 */
+      background-image: linear-gradient(#e66465, #9198e5);
+      /* 从左到右 */
+      background-image: linear-gradient(to right, #e66465, #9198e5);
+      /* 左上角到右下角 */
+      background-image: linear-gradient(to bottom right, red, yellow);
+      /* 角度的线性渐变 */
+      background-image: linear-gradient(-90deg, red, yellow);
+      /* 多个颜色节点 */
+      background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+      /* 透明度 */
+      background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+      /* 重复渐变 */
+      background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+      /* 径向渐变 */
+      background-image: radial-gradient(red, yellow, green);
+      /* 径向渐变 - 颜色节点不均匀分布 */
+      background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+      /* 设置形状 circle 表示圆形/ellipse 表示椭圆形 */
+      background-image: radial-gradient(circle, red, yellow, green);
+      /* 不同尺寸大小关键字的使用 */
+      background-image: radial-gradient(farthest-side at 60% 55%, red, yellow, black);
+      /* 重复的径向渐变 */
+      background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+    "></p>
+  </div>
+  <hr>
+  <h3>文字特效</h3>
+  <div>
+    <p>
+      <h1 class="textshadow" style="
+        margin: 10px;
+        /* 字体 */
+        text-shadow: 5px 5px 5px #FF0000;
+      ">阴影效果</h1>
+    </p>
+  </div>
+  <hr>
+  <h3>2D/3D转换</h3>
+  <div>
+    <p class="box" style="
+      transform: rotate(30deg);
+      -ms-transform:rotate(30deg); /* IE 9 */
+      -webkit-transform:rotate(30deg); /* Safari and Chrome */
+    "></p>
+    <p class="box" style="
+    /* 根据左(X轴)和顶部(Y轴)位置给定的参数，从当前元素位置移动。 */
+      /* transform: translate(30px,20px); */
+      /* 该元素增加或减少的大小 */
+      /* transform: scale(0.8,0.5); */
+      /* X轴和Y轴倾斜的角度 */
+      /* transform: skew(30deg,20deg); */
+      transform: matrix(1,0.5,-0.5,1,0,0);
+    ">
+      2D
+    </p>
+    <p class="box" style="
+      /* transform: rotateX(120deg); */
+      -webkit-transform: rotateX(120deg); /* Safari 与 Chrome */
+      transform: rotateY(130deg);
+    ">
+      3D
+    </p>
+  </div>
+  <hr>
+  <h3>过渡</h3>
+  <div>
+    <p class="box changeBox"></p>
+  </div>
+  <hr>
+  <h3>动画</h3>
+  <div>
+    <p class="box anima_box"></p>
+  </div>
+  <hr>
+  <h3>多列布局</h3>
+  <div></div>
+  <hr>
+  <h3>用户界面</h3>
+  <div></div>
+  <hr>
+</body>
+</html>

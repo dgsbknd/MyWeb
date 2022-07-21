@@ -7,7 +7,43 @@
   <title>Document</title>
   <link rel="stylesheet" href="../../css/style.css">
   <style>
-
+    [title] {
+      color:blue;
+    }
+    [title=runoob] {
+      border:5px solid green;
+    }
+    [title~=hello] {
+      color:red;
+    }
+    [title|=en] { 
+      color:green;
+    }
+    .sort_num {
+      /* 创建或重置一个或多个计数器 */
+      counter-reset: section;
+    }
+    .sort1_num {
+      counter-reset: subsection;
+    }
+    .sort_num p::before {
+      /* 递增一个或多个值 */
+      counter-increment: section;
+      /* 使用 ::before 和 ::after 伪元素来插入自动生成的内容 */
+      content: "Section-" counter(section) " : ";
+    }
+    .sort1_num p::before {
+      counter-increment: subsection;
+      content: "Section-" counter(section) "." counter(subsection) " ";
+    }
+    .sort_num ol {
+      counter-reset: section;
+      list-style-type: none;
+    }
+    .sort_num ol li::before {
+      counter-increment: section;
+      content: counters(section,".") " ";
+    }
   </style>
 </head>
 <body>
@@ -222,6 +258,54 @@
     伪类选择元素基于的是当前元素处于的状态
     伪元素是对元素中的特定内容进行操作，
   </p>
+  <hr>
+  <h3>CSS 属性 选择器</h3>
+  <div>
+    <p title="Hello world">
+      Hello world
+    </p>
+    <p title="runoob">
+      Hello world
+    </p>
+    <p title="hello world">
+      Hello world
+    </p>
+    <p title="en">
+      Hello world
+    </p>
+  </div>
+  <hr>
+  <h3>计数器自动编号</h3>
+  <div class="sort_num">
+    <p>HTML 教程</p>
+    <div class="sort1_num">
+      <p>HTML5 教程</p>
+      <p>HTML 教程</p>
+    </div>
+    <p>CSS 教程</p>
+    <div class="sort1_num">
+      <p>CSS 教程</p>
+      <p>CSS3 教程</p>
+    </div>
+    <p>JavaScript 教程</p>
+  </div>
+  <div class="sort_num">
+    <p>HTML 教程</p>
+    <div class="sort1_num">
+      <p>HTML5 教程</p>
+      <p>HTML5 教程</p>
+      <p>HTML5 教程</p>
+    </div>
+    <ol>
+      <li>item</li>
+      <li>item
+        <ol>
+          <li>item</li>
+        </ol>
+      </li>
+      <li>item</li>
+    </ol>
+  </div>
   <hr>
 </body>
 </html>

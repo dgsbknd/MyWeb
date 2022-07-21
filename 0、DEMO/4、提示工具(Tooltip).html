@@ -23,13 +23,8 @@
       background-color: #1496bb;
       display: block;
       position: absolute;
-      /* visibility: hidden; */
-      /* opacity: 0; */
-      -webkit-transform: translateY(10px);
-      -moz-transform: translateY(10px);
-      -ms-transform: translateY(10px);
-      -o-transform: translateY(10px);
-      transform: translateY(10px);
+      visibility: hidden;
+      opacity: 0;
       -webkit-transition: all .25s ease-out;
       -moz-transition: all .25s ease-out;
       -ms-transition: all .25s ease-out;
@@ -41,68 +36,118 @@
       -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28)
     }
-    li:nth-child(1) span {
-      left: 0;
-      bottom: 100%;
-    }
-    li:nth-child(2) span {
-      left: 100%;
-      top: 0;
-    }
-    li:nth-child(3) span {
-      left: 0;
-      top: 100%;
-    }
-    li:nth-child(4) span {
-      right: 100%;
-      top: 0;
-    }
-    /* 鼠标移动上去后显示提示框 */
-    li:nth-child(1):hover > span {
-      visibility: visible;
-      opacity: 1;
-      -webkit-transform: translateY(0px);
-      -moz-transform: translateY(0px);
-      -ms-transform: translateY(0px);
-      -o-transform: translateY(0px);
-      transform: translateY(0px);
-    }
-    /* 这填补了空白，所以您可以将鼠标放到工具提示中，而不会让它消失 */
-    .tooltip .tooltiptext:before {
-      content: " ";
-      /* display: block; */
-      height: 20px;
-      position: absolute;
-      left: 0;
-      bottom: -20px;
-      width: 100%;
-    }
     /* 箭头 */
-    .tooltip .tooltiptext::after {
+    .tooltip ul>li>span::after{
       content: " ";
       position: absolute;
       border-style: solid;
       border-width: 10px;
-      /* 箭头底部 */
+    }
+
+    /* 这填补了空白，所以您可以将鼠标放到工具提示中，而不会让它消失 */
+    .tooltip ul>li>span:before{
+      content: " ";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    /* 上边 */
+    li:nth-child(1) span {
+      margin-bottom: 15px;
+      left: 50%;
+      bottom: 100%;
+      margin-left: -50px;
+      -webkit-transform: translateY(10px);
+      -moz-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+      -o-transform: translateY(10px);
+      transform: translateY(10px);
+
+    }
+    .tooltip ul>li:nth-child(1)>span:before {
+      left: 0;
+      bottom: -20px;
+    }
+    .tooltip ul>li:nth-child(1)>span::after {
       left: 50%;
       top: 100%; 
       margin-left: -10px;
       border-color: #1496bb transparent transparent transparent;
-      /* 箭头顶部 */
-      /* margin-left: -5px;
+    }
+    /* 右边 */
+    li:nth-child(2) span {
+      margin-left: 15px;
+      left: 100%;
+      top: 0;
+      -webkit-transform: translateX(-10px);
+      -moz-transform: translateX(-10px);
+      -ms-transform: translateX(-10px);
+      -o-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+    .tooltip ul>li:nth-child(2)>span::after {
+      top: 50%;
+      right: 100%;
+      border-color: transparent #1496bb transparent transparent ;
+      margin-top: -10px;
+    }
+    .tooltip ul>li:nth-child(2)>span:before {
+      left: -20px;
+      bottom: 0px;
+    }
+    /* 下边 */
+    li:nth-child(3) span {
+      left: 50%;
+      top: 100%;
+      margin-top: 15px;
+      margin-left: -50px;
+      -webkit-transform: translateY(-10px);
+      -moz-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+      -o-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+    .tooltip ul>li:nth-child(3)>span::after {
+      margin-left: -5px;
       left: 50%;
       bottom:100%;
-      border-color:  transparent transparent black transparent; */
-      /* 右 */
-      /* top: 50%;
-      left: 100%;
-      border-color: transparent transparent transparent black;
-      margin-top: -5px; */
-      /* 左 */
-      /* top: 50%;
+      border-color:  transparent transparent #1496bb transparent;
+    }
+    .tooltip ul>li:nth-child(3)>span:before {
+      left: 0px;
+      top: -20px;
+    }
+    /* 左边 */
+    li:nth-child(4) span {
       right: 100%;
-      border-color: transparent black transparent transparent ;
-      margin-top: -5px; */
+      top: 0;
+      margin-right: 15px;
+      -webkit-transform: translateX(10px);
+      -moz-transform: translateX(10px);
+      -ms-transform: translateX(10px);
+      -o-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    .tooltip ul>li:nth-child(4)>span::after {
+      top: 50%;
+      left: 100%;
+      border-color: transparent transparent transparent #1496bb;
+      margin-top: -5px;
+    }
+    .tooltip ul>li:nth-child(4)>span:before {
+      right: -20px;
+      top: 0px;
+    }
+    /* 鼠标移动上去后显示提示框 */
+    li:hover > span {
+      visibility: visible;
+      opacity: 1;
+      -webkit-transform: translate(0px);
+      -moz-transform: translate(0px);
+      -ms-transform: translate(0px);
+      -o-transform: translate(0px);
+      transform: translate(0px);
     }
   </style>
 </head>

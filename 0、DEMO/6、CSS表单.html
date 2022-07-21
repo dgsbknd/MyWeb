@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .row {
+      width: 90%;
+      margin: 0 auto;
+      padding-top:10px;
+    }
+    .col-10 {
+      float: left;
+      width: 10%;
+    }
+    .col-90 {
+      float: left;
+      width: 90%;
+    }
+    label {
+      padding: 10px 0;
+      display: inline-block;
+    }
+    input[type=text], input[type=password], select, textarea {
+      width: 100%;
+      font-size: 14px;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      border-radius: 4px;
+      outline: none;
+      display: block;
+      resize: none;
+    }
+    input[name=search] {  
+      width: 25%;
+      background-color: white;
+      background-image: url('http://static.runoob.com/images/mix/searchicon.png');
+      background-position: 10px 10px; 
+      background-repeat: no-repeat;
+      padding: 12px 20px 12px 40px;
+      -webkit-transition: width 0.4s ease-in-out;
+      transition: width 0.4s ease-in-out;
+    }
+    input[type=submit] {
+      width: 20%;
+      background-color: #4CAF50;
+      color: white;
+      margin-top: 10px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+    input[type=submit]:hover {
+      background-color: #45a049;
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.24), 0 4px 4px 0 rgba(0,0,0,0.19);
+    }
+    input[type=text]:focus, input[type=password]:focus, textarea:focus {
+      border: 1px solid #555;
+    }
+    input[name=search]:focus{
+      width: 100%;
+    }
+    /* 响应式布局 layout - 在屏幕宽度小于 600px 时， 设置为上下堆叠元素 */
+    @media screen and (max-width: 1050px) {
+      .col-25, .col-75, input[type=submit] {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <form>
+      <!-- 账户框 -->
+      <div class="row clearfix">
+        <div class="col-25">
+          <label for="fname">First Name：</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        </div>
+      </div>
+      <!-- 密码框 -->
+      <div class="row clearfix">
+        <div class="col-25">
+          <label for="lname">Last Name：</label>
+        </div>
+        <div class="col-75">
+          <input type="password" id="lname" name="lastname" placeholder="Your last name..">
+        </div>
+      </div>
+      <!-- 下拉框 -->
+      <div class="row clearfix">
+        <div class="col-25">
+          <label for="country">Country：</label>
+        </div>
+        <div class="col-75">
+          <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+        </div>
+      </div>
+      <!-- 搜索框 -->
+      <div class="row clearfix">
+        <div class="col-25">
+          <label for="search">search：</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="search" name="search" placeholder="Your search..">
+        </div>
+      </div>
+      <!-- 长文本 -->
+      <div class="row clearfix">
+        <div class="col-25">
+          <label for="search">textarea：</label>
+        </div>
+        <div class="col-75">
+          <textarea cols="20" rows="5" placeholder="一些文本..."></textarea>
+        </div>
+      </div>
+      <!-- 提交 -->
+      <div class="row clearfix">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+    
+  </div>
+</body>
+</html>

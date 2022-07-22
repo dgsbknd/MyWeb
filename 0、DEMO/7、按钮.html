@@ -6,51 +6,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    /* 按钮动画 */
-    button {   
+    .button {
       display: inline-block;
       border-radius: 4px;
       background-color: #f4511e;
       border: none;
-      color: #FFFFFF;
+      color: white;
       text-align: center;
       font-size: 28px;
       padding: 20px;
       width: 200px;
-      transition: all 0.5s;
+      
       cursor: pointer;
       margin: 5px;
-      position: relative;
-      -webkit-transition-duration: 0.4s;
-      transition-duration: 0.4s;
       text-decoration: none;
-      overflow: hidden;
       outline: none;
-      box-shadow: 0 9px #999;
     }
-    button span {
+    .button1:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    /* 添加箭头标记 */
+    .button2 span {
       cursor: pointer;
       display: inline-block;
       position: relative;
       transition: 0.5s;
     }
-    button span:after {
+    .button2 span:after {
       content: '»';
       position: absolute;
       opacity: 0;
-      top: 3px;
+      top: 0;
       right: -20px;
       transition: 0.5s;
     }
-    button:hover span {
+    .button2:hover span {
       padding-right: 25px;
     }
-    /* 鼠标移动到按钮上后添加箭头标记: */
-    button:hover span:after {
+    .button2:hover span:after {
       opacity: 1;
       right: 0;
     }
-    button:after {
+
+    /* 按钮动画 - 波纹效果 */
+    .button3 {
+      position: relative;
+      -webkit-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+      transition: all 0.5s;
+      overflow: hidden;
+    }
+    .button3:after {
       content: "";
       background: #ff7f58;
       display: block;
@@ -62,20 +68,31 @@
       opacity: 0;
       transition: all 0.8s
     }
-    /* 点击时添加 "波纹" 效果: */
-    button:active:after {
+    .button3:active:after {
       padding: 0;
       margin: 0;
       opacity: 1;
       transition: 0s
     }
-    button:active {
+    /* "按压效果" */
+    .button4 {
+      box-shadow: 0 9px #999;
+    }
+    .button4:active  {
       box-shadow: 0 5px #666;
       transform: translateY(4px);
+    }
+    .disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
     }
   </style>
 </head>
 <body>
-  <button><span>按钮动画 </span></button>
+  <a href="#" class="button button1">链接按钮</a>
+  <button class="button button2"> <span>hover</span></button>
+  <button class="button button3"> 按钮</button>
+  <input type="button" class="button button4" value="输入框按钮">
+  <button class="button disabled">按钮</button>
 </body>
 </html>

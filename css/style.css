@@ -2,13 +2,16 @@
   box-sizing: border-box;
 }
 
-body,ul,a{
+body,a,p,ul,ol,dl,dt{
   padding:0;
   margin:0;
   list-style:none;
   text-decoration: none;
 }
-
+input {
+  border: none;
+  outline: none;
+}
 /* 清除浮动 */
 .clearfix::after {
   content: "";

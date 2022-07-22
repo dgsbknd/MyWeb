@@ -45,6 +45,65 @@
       /* height: 40px; */
       transform: rotate(180deg);
     }
+    /* 创建动画 */
+    @keyframes myfirst {
+      /* from {background: red;}
+      to {background: yellow;} */
+      0%   {background:red; left:0px; top:0px;}
+      25%  {background:yellow; left:100px; top:0px;}
+      50%  {background:blue; left:100px; top:100px;}
+      75%  {background:green; left:0px; top:100px;}
+      100% {background:red; left:0px; top:0px;}
+    }
+    /* Safari 与 Chrome */
+    @-webkit-keyframes myfirst {
+      from {background: red;}
+      to {background: yellow;}
+    }
+    .anima_box {
+      position:relative;
+      /* 动画的名称 */
+      animation-name:myfirst;
+      /* 完成周期时间  */
+      animation-duration:5s;
+      /* 
+        动画的速度曲线：
+          linear 从头到尾的速度是相同
+          ease(默认) 低速开始，然后加快，在结束前变慢
+          ease-in 低速开始
+          ease-out 低速结束
+          ease-in-out 低速开始和结束
+          steps(int,start|end) 时间函数中的间隔数量
+          cubic-bezier(0,0,0.25,1)
+      */
+      animation-timing-function:linear;
+      /* 动画何时开始 */
+      animation-delay:2s;
+      /* 循环次数 */
+      animation-iteration-count:infinite;
+      /* 逆向地播放 */
+      animation-direction:alternate;
+      /* 动画是否正在运行或暂停 */
+      animation-play-state:running;
+      /* Safari 与 Chrome */
+      /* -webkit-animation: myfirst 5s linear 2s infinite alternate;  */
+    }
+    .newspaper {
+      /* 分割的列数 */
+      column-count:3;
+      -moz-column-count: 3; /* Firefox */
+      -webkit-column-count: 3; /* Chrome, Safari, Opera */
+      /* 列间间隙 */
+      column-gap: 40px;
+      /* 边框样式 */
+      column-rule: 1px solid lightblue;
+      
+    }
+    /* 外部发光 */
+    /* a:hover {
+      box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    } */
   </style>
 </head>
 <body>
@@ -166,10 +225,22 @@
   </div>
   <hr>
   <h3>多列布局</h3>
-  <div></div>
+  <div>
+    <p class="newspaper">
+      “当我年轻的时候，我梦想改变这个世界；当我成熟以后，我发现我不能够改变这个世界，我将目光缩短了些，决定只改变我的国家；当我进入暮年以后，我发现我不能够改变我们的国家，我的最后愿望仅仅是改变一下我的家庭，但是，这也不可能。当我现在躺在床上，行将就木时，我突然意识到：如果一开始我仅仅去改变我自己，然后，我可能改变我的家庭；在家人的帮助和鼓励下，我可能为国家做一些事情；然后，谁知道呢?我甚至可能改变这个世界。”
+    </p>
+  </div>
   <hr>
   <h3>用户界面</h3>
-  <div></div>
+  <div>
+    <p style="
+      border: 2px solid;
+      padding: 10px 40px;
+      width: 300px;
+      resize: both;
+      overflow: auto;
+    ">调整属性指定一个元素是否由用户可调整大小的。</p>
+  </div>
   <hr>
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+// // 构造函数
+// function myFunction(arg1,arg2){
+// 	this.firstName = arg1;
+// 	this.lastName = arg2;
+// }
+// var x = new myFunction(1,23)
+// console.log(x.firstName)
+
+
+// call() 和 apply() 
+var myObject;
+function myFunction(a,b){
+	return a * b
+}
+myObject = myFunction.call(myObject,10,2);
+document.write(myObject)
+document.write('<br/>')
+myArray = [10,2];
+myObject = myFunction.apply(this,myArray)
+document.write(myObject)
+</script>
+</body>
+</html>

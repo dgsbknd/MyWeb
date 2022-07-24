@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>两栏布局（左侧固定 + 右侧自适应布局）</title>
+	<style type="text/css">
+    /* 清除浮动 */
+		.clearfix::after{
+			content: "";
+			display: table;
+			clear: both;
+		}
+		.main{
+			padding-left: 100px;
+			overflow: hidden;
+		}
+		.outer{
+			height: 100px;
+		}
+		.left{
+			width: 200px;
+			height: 100%;
+			background-color:red
+		}
+		.right{
+			height: 100%;
+			background-color: #ccc
+		}
+	</style>
+</head>
+<body>
+  <!-- 双飞翼 -->
+  <div class="main clearfix">
+    <div class="left" style="
+			position: relative;
+      float: left;
+			left: -100px;
+			margin-bottom: -4000px;
+			padding-bottom: 4000px;
+    ">123</div>
+    <div class="right" style="
+    	position: relative;
+			float: left;
+			width: 100%;
+			margin-left: -200px;
+			margin-bottom: -4000px;
+			padding-bottom: 4000px;
+    ">123
+      <br/>
+      123
+  </div>
+  </div>
+
+	<!-- 1、浮动 -->
+	<!-- <div class="outer">
+		<div class="left" style="float: left;">123</div>
+		<div class="right" style="margin-left: 200px;">123</div>
+	</div> -->
+
+	<!-- 2、浮动 -->
+	<!-- <div class="outer">
+		<div class="left" style="float: left;">123</div>
+		<div class="right" style="overflow: auto;">123</div>
+	</div> -->
+
+	<!-- 3、flex 布局 -->
+	<!-- <div class="outer" style="display: flex">
+		<div class="left">123</div>
+		<div class="right" style="flex: 1;">123</div>
+	</div> -->
+
+	<!-- 4、绝对定位 布局 -->
+	<!-- <div class="outer" style="position: relative;">
+		<div class="left" style="position: absolute;">123</div>
+		<div class="right" style="margin-left: 200px">123</div>
+	</div> -->
+
+	<!-- 5、绝对定位 布局 -->
+	<!-- <div class="outer" style="position: relative;">
+		<div class="left">123</div>
+		<div class="right" style="position: absolute;left: 200px;top: 0;right: 0;bottom: 0;">123</div>
+	</div> -->
+</body>
+</html>

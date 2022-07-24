@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<div id="jname"></div>
+	<div id="jurl"></div>
+	<div id="jlist"></div>
+	<div id="jsutes"></div>
+
+<script type="text/javascript">
+	var JSONObject = {
+		'name' : 'qgw',
+		'url' : 'www.baidu.com',
+		'list':{"name":"菜鸟教程" , "url":"www.runoob.com"},
+		"sites": [
+			{ "name":"菜鸟教程" , "url":"www.runoob.com" }, 
+			{ "name":"google" , "url":"www.google.com" }, 
+			{ "name":"微博" , "url":"www.weibo.com" }
+		]
+	};
+	$('#jname').html(JSONObject.name);
+	$('#jurl').html(JSONObject.url)
+	JSONObject.list['name'] = 123
+	$('#jlist').html(JSONObject.list['name'])
+	JSONObject.sites['ane']
+	$('#jsutes').html(JSONObject.sites[2].name)
+	delete JSONObject.list["name"]	
+	console.log(JSONObject)
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	// search() 方法 用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置。
+	// replace() 方法 用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。
+
+	// var str = 'Visit Runoob!';
+	// // 检索
+	// // var n = str.search(/Runoob/i);
+	// var n = str.search("Runoob");
+	// document.write(n + '<br/>')
+	// document.write(str.slice(n,n+6) + '<br/>')
+
+	// // 替换
+	// n = str.replace('Runoob','qwe')
+	// n = str.replace(/Runoob/i,'qwe')
+	// document.write(n + '<br/>')
+
+	// // 修饰符
+	// // i 		执行对大小写不敏感的匹配。
+	// // g 		执行全局匹配
+	// // m 		执行多行匹配
+
+	// 方括号用于查找某个范围内的字符：
+	// [abc]		查找方括号之间的任何字符。
+	// [0-9]		查找任何从 0 至 9 的数字。
+	// (x|y)		查找任何以 | 分隔的选项。
+
+	// 元字符
+	// \d			查找数字。
+	// \s			查找空白字符。
+	// \b			匹配单词边界。
+	// \uxxxx		查找以十六进制数 xxxx 规定的 Unicode 字符。
+
+	// 量词:
+	// n+			匹配任何包含至少一个 n 的字符串。
+	// n*			匹配任何包含零个或多个 n 的字符串。
+	// n?			匹配任何包含零个或一个 n 的字符串。
+
+
+
+	// // test()检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false。
+	// var patt = /e/;
+	// patt.test("The best things in life are free!");		//true
+	// // exec() 该函数返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。
+	// console.log(/T/.exec("The best things in life are free!"))
+	
+
+
+	// var myurl ='https://www.runoob123.com/js/js-regexp.html'
+	// var qgw = myurl.search(/[0-9]/i);
+	// document.write(myurl.slice(qgw) + '<br/>')
+	// // 检测一个字符串是否匹配某个模式
+	// document.write(/www/.test(myurl) + '<br/>')
+	// // 检索字符串中的正则表达式的匹配
+	// document.write(/www/.exec(myurl) + '<br/>')
+
+
+	str = '123asd_'
+	document.write(isValid(str) + '<br/>');
+	str2 = "$32343#"
+	document.write(isValid(str2) + '<br/>');
+	val = "123456"
+	document.write(isValid(val) + '<br/>');
+	val2 = 'qqqqq'
+	document.write(isValid(val2) + '<br/>');	
+
+	function isValid(str) { 
+		// 字符串为数字、字母、下划线组成
+		let pdszx = /^\w+$/.test(str)
+		// 字符串全部为字母
+		let pdz = /^[a-zA-Z]+$/.test(str);
+		// 字符串全部为数字
+		let isnum = /^\d+$/.test(str);
+		/*是否带有小数*/
+		let isDecimal = /^\d+\.\d+$/.test(str)	
+		/*校验是否中文名称组成 */	
+ 		let ischina =/^[\u4E00-\u9FA5]{2,4}$/.test(str)	
+ 		/*校验是否全由8位数字组成 */
+ 		let isStudentNo =/^[0-9]{8}$/.test(str)	
+ 		/*校验电话码格式 */
+ 		let isTelCode =/^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/.test(str)	
+ 		/*校验邮件地址是否合法 */
+ 		let IsEmail=/^\w+@[a-zA-Z0-9]{2,10}(?:\.[a-z]{2,4}){1,3}$/.test(str)	
+
+		if (pdz) {
+			return '字符串全部为字母'; 
+		}else if(isnum){
+			return '字符串全部为数字'; 
+		}else if(pdszx){
+			return '字符串为数字、字母、下划线组成'; 
+		}else{
+			return false;
+		}
+		
+	}
+
+
+</script>
+</body>
+</html>

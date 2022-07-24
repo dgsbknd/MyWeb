@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	// ES5
+	var y = function(x, y) {
+	    return x * y;
+	}
+	// ES6
+	const x = (x, y) => x * y;
+	console.log(x(123,1233))
+	
+
+	function myFunction(x,y){
+		if (y===undefined) {
+			y = 0;
+		}
+		return x * y;
+	}
+	console.log(myFunction(123))
+
+
+	findMaxnum = findMax(1,2,6,7,12,35,124,123,3,4,5,2)
+	function findMax() {
+		var i, max = arguments[0];
+		if(arguments.length < 2) return max;
+		for(i =0;i<arguments.length;i++){
+			if (arguments[i] > max) {
+				max = arguments[i]
+			}
+		}
+		return max;
+	}
+	console.log(findMaxnum)
+</script>
+</body>
+</html>

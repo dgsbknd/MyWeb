@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+<div id="demo"></div>
+<button onclick="myFunction()">点击</button>
+<button onclick="myStopFunction()">停止</button>
+<p>点击第一个按钮等待3秒后出现"Hello"弹框。</p>
+<p>点击第二个按钮来阻止第一个函数运行。（你必须在3秒之前点击它）。</p>
+<button onclick="myFunction()">点我</button>
+<button onclick="myStopFunction()">停止弹框</button>
+<script type="text/javascript">
+// setInterval() - 间隔指定的毫秒数不停地执行指定的代码。
+// setTimeout() - 在指定的毫秒数后执行指定代码。
+myTimer()
+var myVar = setInterval(function(){
+	myTimer()
+},1000)
+function myFunction(){
+	setInterval(function(){
+		alert('每3秒提示')
+	},3000)
+}
+function myTimer(){
+	var d = new Date();
+	var t = d.toLocaleTimeString();
+	document.getElementById('demo').innerHTML = t;
+}
+function myStopFunction(){
+	clearInterval(myVar);
+}
+function myFunction(){
+	myVar=setTimeout(function(){alert("Hello")},3000);
+}
+function myStopFunction(){
+	clearTimeout(myVar);
+}
+</script>
+</body>
+</html>

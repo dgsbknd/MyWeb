@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+	<div id="intro">
+		<p>123</p>
+		<p id="intro1">123</p>
+	</div>
+	<p class="intro">1234</p>
+
+
+<script type="text/javascript">
+var element = document.getElementById('intro')
+var element1 = document.getElementById('intro1')
+// element.innerHTML=123
+// var txt
+// document.write(element.firstChild.nodeValue)
+ var elementp = document.getElementsByTagName('p')
+ console.log(elementp)
+  var elementclass = document.getElementsByClassName('intro')
+ // console.log(elementclass)
+ element.style.color = 'red'
+
+ // 创建新的 HTML 元素
+var para = document.createElement('p');//创建了一个新的 <p> 元素
+var node = document.createTextNode('12345');//向 <p> 元素添加文本
+para.appendChild(node);//向 <p> 元素追加文本节点
+elementclass[0].appendChild(para)//向这个已存在的元素追加新元素
+element.insertBefore(para,element1)
+// element.removeChild(element1);
+// element1.parentNode.removeChild(element1);
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var d = new Date().getDay();
+	var x
+	switch(d)
+	{
+		case 0:x="今天是星期日"; 
+		break; 
+		case 6:x="今天是星期六"; 
+		default:
+    	x="距离周六还有"+(6-d)+'天';
+	}
+document.write(x)
+</script>
+</body>
+</html>

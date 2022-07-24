@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+<p id="demo"></p>
+
+<script type="text/javascript">
+var person1 ={
+	firstName:'Qian',
+	lastName :'gw',
+	funllName:function(){
+		return this.firstName+ " "+ this.lastName;
+	}
+}
+var person2 ={
+	firstName:"John",
+	lastName: "Doe",
+}
+document.write(person1.funllName() + "<br /	>")
+document.write(person1.funllName.call(person2) + "<br /	>")
+document.write(person1.funllName.apply(person2) + "<br /	>")
+
+var x = this;
+console.log(x)		//[object Window]:
+</script>
+</body>
+</html>

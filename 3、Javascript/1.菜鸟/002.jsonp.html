@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+</head>
+<body>
+<div id="divCustomers">
+	
+</div>
+
+<script type="text/javascript">
+$.getJSON('../jsonp.php?jsoncallback=?',function(data){
+	var html ='<ul>';
+	for (var i = 0; i < data.length; i++){
+		html +='<li>'+data[i]+'</li>';
+	}
+	html +='</ul>';
+	$('#divCustomers').html(html)
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		.checkbox{
+		 	width : 40px;
+		 	height: 40px;
+		 	border: 2px solid #000;
+		 	border-radius: 50%;
+		}
+		.checkbox label{
+			display: block;
+			width: 20px;
+			height:20px;
+			margin: 10px;
+			background-color : #000; 
+			opacity: 0;
+			filter:alpha(opacity=0);
+			border-radius: 50%;
+		}
+		.checkbox input[type="checkbox"]{
+			display: none;
+		}
+		.checkbox input[type="checkbox"]:checked + label{
+			opacity: 1;
+			filter:alpha(opacity=100);
+		}
+
+
+
+		.checkbox1{
+			width: 98px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			overflow: hidden;
+			line-height: 8px;
+		}
+		.checkboxDiv{
+			width: 144px;
+			margin-left: 0px;
+		}
+		.checkboxDiv span{
+			width: 48px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="checkbox">
+		<input type="checkbox" id="checkbox">
+		<label for='checkbox'></label>	
+	</div>
+	<hr>
+	<div class="checkbox1">
+		<div class="checkboxDiv">
+			<span>ON</span>
+			<span> </span>
+			<span>OFF</span>
+			<input type="checkbox" id="checkbox1">
+			<label for='checkbox1'></label>	
+		</div>
+	</div>
+</body>
+</html>

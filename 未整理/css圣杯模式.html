@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+        /* 清除浮动 */
+		.clearfix::after{
+			content: "";
+			display: table;
+			clear: both;
+		}
+		.wrap{
+			width: 90%;
+			margin: 0 auto;
+			border: 1px solid #000;
+		}
+		.top, .foot{
+			height: 50px;
+			background-color: #000;
+		}
+		.main{
+			padding: 0 100px;
+			overflow: hidden;
+		}
+		.main .left,
+		.main .content,
+		.main .right{
+			float: left;
+			position: relative;
+			background-color: green;
+			margin-bottom: -4000px;
+			padding-bottom: 4000px;
+		}
+		.main .content{
+			width: 100%;
+			margin-left: -100px;
+			background-color: red;
+		}
+		.main .left{
+			left: -100px;
+			width: 100px;
+		}
+		.main .right{
+			left: 100px;
+			width: 100px;
+			margin-left: -100px;
+		}
+	</style>
+</head>
+<body>
+<!-- CSS圣杯模式 双飞翼 -->
+<div class="wrap">
+	<div class="top"></div>
+	<div class="main clearfix">
+		<div class="left">123</div>
+		<div class="content">
+            456 
+            <br /><br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br /><br /><br />
+        </div>
+		<div class="right">789</div>
+	</div>
+	<div class="foot"></div>
+</div>	
+</body>
+</html>

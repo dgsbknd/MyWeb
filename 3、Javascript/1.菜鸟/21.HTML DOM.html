@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+<div id="intro">
+	<p>1</p>
+	<p class="intro">2</p>
+	<p>3</p>
+</div>
+<img id="image" src="smiley.gif">
+<script type="text/javascript">
+// 通过 id 查找 HTML 元素
+var x=document.getElementById("intro");
+// 通过标签名查找 HTML 元素
+var y=x.getElementsByTagName("p");
+// 通过类名找到 HTML 元素
+var z=x.getElementsByClassName("intro");
+console.log(y[0])
+console.log(z[0])
+z[0].innerHTML="新文本!";
+
+document.getElementById("image").src="landscape.jpg";
+y[0].style.color="blue";
+</script>
+</body>
+</html>

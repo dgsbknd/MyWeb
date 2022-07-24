@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div style="height: 60px;border: 1px solid #ccc;overflow: hidden;position: relative;" id="width">
+    <div style="width:440px;position: absolute;" id="text" >
+        <span onmouseover="stop()" onmouseout="start()">弘扬工匠精神 打造科技精品</span>
+        <span onmouseover="stop()" onmouseout="start()">严慎细实保质量 精益求精促发展</span>
+    </div>
+    <div style="width:440px;position: absolute;" id="text1" >
+        <span onmouseover="stop()" onmouseout="start()">弘扬工匠精神 打造科技精品</span>
+        <span onmouseover="stop()" onmouseout="start()">严慎细实保质量 精益求精促发展</span>
+    </div>
+ </div>
+<script type="text/javascript">
+ var textobj=document.getElementById("text")
+  var text1obj=document.getElementById("text1")
+ var qwe=setInterval("clock()",2);
+ var w=document.getElementById("width").clientWidth;
+ var i=w ,j=w;
+text1obj.style.marginLeft=(j)+"px";
+function clock(){
+    i--;
+    textobj.style.marginLeft=(i)+"px";
+    if(i==0||j<w){
+        j--;
+        text1obj.style.marginLeft=(j)+"px";
+        if (j==-w) {j=w}
+    }
+    if(i==-w){
+        i=w
+    }
+}
+function start(){
+    qwe=setInterval("clock()",20)
+}
+function stop(){
+    window.clearInterval(qwe)
+}
+</script>
+</body>
+</html>

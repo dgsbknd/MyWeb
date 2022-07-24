@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+var x = 1;
+{
+	var x =2;
+	console.log(x)
+}
+console.log(x)
+{
+	let x =3;
+	console.log(x)
+}
+console.log(x)
+function myFunction(){
+	var x =4;
+}
+myFunction()
+console.log(x)
+
+
+
+var carName ='Volvo';
+document.write(carName)
+document.write('<br/>')
+function myFunction(){
+	document.write(carName)
+	document.write('<br/>')
+	var carName ='fun(Volvo)';
+	document.write(carName)
+	document.write('<br/>')
+}
+myFunction()
+document.write(carName)
+document.write('<br/>')
+const PI = 3.141592653589793;
+// PI = 3.14;      // 报错
+// PI = PI + 10;   // 报错
+document.write(PI)
+document.write('<br/>')
+const myList = [3.141592653589793];
+myList[0] = [3.14]; 
+// myList = [3.14];   // 报错
+document.write(myList)
+</script>
+</body>
+</html>

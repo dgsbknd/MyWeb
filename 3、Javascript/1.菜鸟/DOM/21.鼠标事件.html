@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+.bol{
+	width: 100px;
+	height: 100px;
+	background-color: #ccc;
+}
+</style>
+<body onload="checkCookies()" onunload ="checktc()">
+<div class="bol" onclick="displaycolor(this)"></div>
+<br/>
+<!-- 
+点击鼠标 :onclick 
+onload 和 onunload 事件会在用户进入或离开页面时被触发。
+-->
+
+<button onclick="displayDate(this)">
+	点击
+</button>
+
+
+<p>
+	<div class="bol" onmouseover="mOver(this)" onmouseout="mOut(this)" onmousedown="mDown(this)" onmouseup="mUp(this)"></div>
+</p>
+
+
+
+<script type="text/javascript">
+function displaycolor(x){
+	x.style.backgroundColor ='red'
+}
+function checkCookies(){
+	if (navigator.cookieEnabled==true){
+		alert("Cookies 可用")
+	}
+	else{
+		alert("Cookies 不可用")
+	}
+}
+function checktc(){
+	alert("Cookies 可用")
+}
+function displayDate(){
+	alert(Date())
+}
+function mOver(obj){
+	obj.style.backgroundColor='blue'
+}
+function mOut(obj){
+	obj.style.backgroundColor='#ccc'
+}
+function mDown(obj){
+	obj.style.backgroundColor='red'
+}
+function mUp(obj){
+	obj.style.backgroundColor='#ccc'
+}
+</script>
+</body>
+</html>

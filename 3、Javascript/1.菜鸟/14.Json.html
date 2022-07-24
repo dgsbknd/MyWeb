@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+<script type="text/javascript">
+var text = '{"sites" : ['+'{"name":"Runoob","url":"www.runoob.com"},'+'{"name":"Google","url":"www.google.com"},'+'{"name":"Taobao","url":"www.taobao.com"} ]}';
+
+// JSON.parse()		用于将一个 JSON 字符串转换为 JavaScript 对象。
+// JSON.stringify()		用于将 JavaScript 值转换为 JSON 字符串。
+
+obj =JSON.parse(text);
+document.write(obj.sites[1].name+' '+obj.sites[1].url)
+
+
+</script>
+</body>
+</html>

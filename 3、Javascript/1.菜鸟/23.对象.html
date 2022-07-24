@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+// var person = new Object();
+// person.firstname = 'q';
+// person.lastname = 'g';
+// person.age = 50;
+// person.eyecolor = 'blue';
+// // document.write()
+// console.log(person)
+// var x =person
+// console.log(x)
+
+// 对象构造器
+function person(firstname,lastname,age,eyecolor){
+	this.firstname =firstname;
+	this.lastname = lastname;
+	this.age = age;
+	this.eyecolor =eyecolor;
+	this.changeName = changeName;
+	function changeName(name){
+		this.firstname = name
+	}
+}
+myFather=new person("John","Doe",50,"blue");
+myFather.changeName('123')
+console.log(myFather)
+
+person.prototype.passname = 123
+// 原型
+console.log(myFather.passname)
+</script>
+</body>
+</html>

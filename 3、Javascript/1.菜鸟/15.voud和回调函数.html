@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<a href="javascript:void(0);">点我没有反应的!</a>
+	<a href="javascript:void(alert('Warning!!!'))">点击提示信息！</a>
+	<p id="demo"></p>
+
+<script type="text/javascript">
+function print(){
+	document.getElementById('demo').innerHTML='1234'
+}
+setTimeout(print, 3000);
+document.getElementById('demo').innerHTML='4321'
+console.log('2')
+</script>
+</body>
+</html>

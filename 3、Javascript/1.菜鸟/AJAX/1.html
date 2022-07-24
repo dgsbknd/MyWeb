@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1 id="myDiv">使用 AJAX 修改该文本内容</h1>
+	<button onclick="loadXMLDoc()">修改内容</button>
+<script type="text/javascript">
+
+function loadXMLDoc(){
+	var xmlhttp;
+	var txt,x,i;
+	if (window.XMLHttpRequest){
+		xmlhttp = new XMLHttpRequest();
+	}else{
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange = function(){
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			xmlDoc = xmlhttp.responseXML;
+			txt ='';
+			x=xmlDoc.getElementsByTagName("ARTIST");
+			for(i=0;i<x.length;i++){
+				txt=txt + x[i].childNodes[0].nodeValue + "<br>";
+			}
+			document.getElementById('myDiv').innerHTML=txt;
+			// document.getElementById('myDiv').innerHTML=xmlhttp.responseText;
+		}
+	}
+	xmlhttp.open('GET','/cd_catalog.xml',true);
+	// xmlhttp.open('POST','/img/1234.asp',true);
+	// xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send();
+}
+</script>
+</body>
+</html>

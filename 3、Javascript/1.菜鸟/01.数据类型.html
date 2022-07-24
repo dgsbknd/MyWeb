@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+var carname=new String;
+var x=      new Number;
+var y=      new Boolean;
+var cars=   new Array;
+var person= new Object;
+// 数组
+var asd = ['123','234','345']
+for (var i = 0; i < asd.length; i++) {
+	document.write(asd[i]+'<br/>')
+}
+// 对象方法
+var person = {
+	firstName : 'John',
+	lastName  : 'Doe',
+	id		  : '5566',
+	fullName  : function(){
+		document.write(this.firstName + ' ' + this.lastName)
+	}
+}
+person.fullName()
+</script>
+</body>
+</html>

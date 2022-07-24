@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+<div id="demo"></div>
+<script type="text/javascript">
+	var xhr = new XMLHttpRequest();
+	xhr.onload = function () {
+		// 输出接收到的文字数据
+		document.getElementById("demo").innerHTML=xhr.responseText;
+	}
+	xhr.onerror = function () {
+		document.getElementById("demo").innerHTML="请求出错";
+	}
+	
+	// 发送异步 GET 请求
+	xhr.open("GET", "http://localhost:8080/1%E6%9C%884%E6%97%A5/3.JavaScript/1.%E8%8F%9C%E9%B8%9F/1.txt", true);
+	xhr.send();
+</script>
+</body>
+</html>

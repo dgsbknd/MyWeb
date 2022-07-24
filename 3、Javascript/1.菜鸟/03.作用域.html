@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+<button onclick='onDate()' onmouseout="myMouseout(this)"> 按键 </button>
+<img onmouseout="myMouseout(this)" src="../img/pic_bulboff.gif">
+
+
+<script type="text/javascript">
+var carName = " Volvo1"; //全局变量
+function myFun() {
+	carName = 'Volvo2'; //局部变量
+	console.log(carName)
+}
+myFun()
+console.log(carName)
+
+</script>
+</body>
+</html>
